@@ -6,6 +6,7 @@ import type { BuildInfo, HardhatRuntimeEnvironment } from 'hardhat/types'
 import { docgen as runDocgen } from 'solidity-docgen'
 
 import '@nomicfoundation/hardhat-toolbox'
+import '@nomiclabs/hardhat-ethers'
 import '@typechain/hardhat'
 import 'hardhat-deploy'
 import 'hardhat-gas-reporter'
@@ -48,6 +49,7 @@ const config: HardhatUserConfig = {
     version: '0.8.28', 
     settings: { 
       optimizer: { enabled: true, runs: 200 },
+      evmVersion: 'cancun',
       outputSelection: {
         '*': {
           '*': ['*', 'evm.bytecode.object', 'evm.deployedBytecode.object', 'metadata']
@@ -82,21 +84,7 @@ const config: HardhatUserConfig = {
     artifacts: resolve(__dirname, '../../apps/dao-dapp/src/contracts')
   },
   etherscan: {
-    apiKey: {
-      sepolia: process.env.ETHERSCAN_API_KEY || '',
-      // Blockscout generally ignores API keys; a placeholder keeps plugin happy
-      'sepolia-blockscout': 'dummy'
-    },
-    customChains: [
-      {
-        network: 'sepolia-blockscout',
-        chainId: 11155111,
-        urls: {
-          apiURL: 'https://eth-sepolia.blockscout.com/api',
-          browserURL: 'https://eth-sepolia.blockscout.com'
-        }
-      }
-    ]
+    apiKey: process.env.ETHERSCAN_API_KEY || ''
   }
 }
 export default config
