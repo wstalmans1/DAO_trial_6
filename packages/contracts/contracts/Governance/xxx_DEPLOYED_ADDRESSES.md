@@ -1,5 +1,51 @@
 # Deployed Contract Addresses - Sepolia Testnet
 
+## Membership-Based Governance System (Latest)
+
+### Box Contract (Membership System)
+- **Address**: `0xB25617eeD5F51d4CF9FB0730A8D25A9a093f09b7`
+- **Network**: Sepolia (Chain ID: 11155111)
+- **Explorer (Blockscout)**: https://eth-sepolia.blockscout.com/address/0xB25617eeD5F51d4CF9FB0730A8D25A9a093f09b7
+- **Explorer (Etherscan)**: https://sepolia.etherscan.io/address/0xB25617eeD5F51d4CF9FB0730A8D25A9a093f09b7
+- **Purpose**: Simple target contract for governance proposals
+- **Current Owner**: MyGovernor contract (membership-based)
+
+### MembershipAndVotes Contract
+- **Address**: `0x656486Cc40eD0c96b29aCbC9045A27220871d80A`
+- **Network**: Sepolia (Chain ID: 11155111)
+- **Explorer (Blockscout)**: https://eth-sepolia.blockscout.com/address/0x656486Cc40eD0c96b29aCbC9045A27220871d80A
+- **Explorer (Etherscan)**: https://sepolia.etherscan.io/address/0x656486Cc40eD0c96b29aCbC9045A27220871d80A
+- **Purpose**: 1-person-1-vote membership registry with IVotes compatibility
+- **Current Members**: 1 (deployer)
+- **Owner**: 0xD78C12137087D394c0FA49634CAa80D0a1985A8A
+
+### MyGovernor Contract (Membership-Based)
+- **Address**: `0xe43912445ABcE9204e2cc774d29e4B9D6F58f09e`
+- **Network**: Sepolia (Chain ID: 11155111)
+- **Explorer (Blockscout)**: https://eth-sepolia.blockscout.com/address/0xe43912445ABcE9204e2cc774d29e4B9D6F58f09e
+- **Explorer (Etherscan)**: https://sepolia.etherscan.io/address/0xe43912445ABcE9204e2cc774d29e4B9D6F58f09e
+- **Purpose**: Governance contract with membership-based voting (1 person, 1 vote)
+- **Voting Power Source**: MembershipAndVotes contract (`0x656486Cc40eD0c96b29aCbC9045A27220871d80A`)
+- **Voting Delay**: 1 block
+- **Voting Period**: 7 blocks
+- **Proposal Threshold**: 1 member
+- **Quorum Fraction**: 4%
+
+### Configuration Summary (Membership System)
+
+| Parameter | Value |
+|-----------|-------|
+| Voting Delay | 1 block |
+| Voting Period | 7 blocks |
+| Proposal Threshold | 1 member |
+| Quorum Fraction | 4% |
+| Voting Model | 1 person, 1 vote |
+| Initial Members | 1 |
+
+---
+
+## Token-Based Governance System (Previous Deployment)
+
 ## Governance System Contracts
 
 ### Box Contract
